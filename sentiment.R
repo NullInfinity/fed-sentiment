@@ -18,3 +18,5 @@ fomc.dates <- sapply(fomc.links, . %>% gsub(pattern='/monetarypolicy/fomcminutes
 
 sentiments <- lapply(X=fomc.dates, FUN=sentiment)
 names(sentiments) = fomc.dates
+avg.sentiments <- unlist(lapply(sentiments, mean))
+names(avg.sentiments) = fomc.dates
